@@ -19,8 +19,13 @@ ADD AX, 3    ; Adiciona 3 ao valor em AX
 
 ---
 
+![[NBFft.png]]
+
 ## 2. C (1972)
 **Criador:** Dennis Ritchie (Bell Labs)
+
+![[c02_08_01.gif]]
+
 
 **Características:**
 - Linguagem de nível médio (entre assembly e linguagens de alto nível)
@@ -44,6 +49,8 @@ int main() {
 
 ## 3. C++ (1985)
 **Criador:** Bjarne Stroustrup
+
+![[funcao-cpp.drawio-2.webp]]
 
 **Características:**
 - Extensão do C com Programação Orientada a Objetos (POO)
@@ -71,6 +78,8 @@ public:
 ## 4. Java (1995)
 **Criador:** James Gosling (Sun Microsystems)
 
+![[Jteqd.png]]
+
 **Características:**
 - "Write Once, Run Anywhere" - portabilidade via JVM
 - Orientada a objetos pura
@@ -93,6 +102,8 @@ public class HelloWorld {
 
 ## 5. Kotlin (2011)
 **Criador:** JetBrains
+
+![[kotlin_1440.png]]
 
 **Características:**
 - **Interoperabilidade 100% com Java** - usa a mesma JVM
@@ -135,6 +146,8 @@ saudar(pessoa)
 ## 6. JavaScript (1995)
 **Criador:** Brendan Eich (Netscape)
 
+![[JS.png]]
+
 **Características:**
 - Originalmente para web browsers
 - Interpretada (hoje também JIT compiled)
@@ -156,6 +169,8 @@ console.log(saudar("Mundo"));
 
 ## 7. Python (1991)
 **Criador:** Guido van Rossum
+
+![[python.png]]
 
 **Características:**
 - Filosofia: "código legível e simples"
