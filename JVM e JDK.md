@@ -119,7 +119,10 @@ invokevirtual java/io/PrintStream.println
 
 ### Componentes do JDK
 
-**1. JVM** - Executa os programas **2. Bibliotecas** - Código pronto para usar (Collections, I/O, etc.) **3. Compilador** - javac (Java), kotlinc (Kotlin) **4. Ferramentas** - jar, javadoc, debugger
+**1. JVM** - Executa os programas
+**2. Bibliotecas** - Código pronto para usar (Collections, I/O, etc.) 
+**3. Compilador** - javac (Java), kotlinc (Kotlin) 
+**4. Ferramentas** - jar, javadoc, debugger
 
 ---
 
@@ -388,5 +391,3 @@ Kotlin/Native → Para mobile nativo, sistemas embarcados
 - Base para entender como Kotlin funciona
 - Explica por que pode usar bibliotecas Java
 - Performance e portabilidade "de graça"
-
-**Próxima aula:** Configuração do ambiente Kotlin e primeiro programa!

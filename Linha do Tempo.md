@@ -1,6 +1,5 @@
 
 # Evolução das Linguagens de Programação
-*Material para Primeira Aula - Curso de Programação*
 
 ## 1. Assembly (1940s-1950s)
 **Características:**
@@ -547,3 +546,102 @@ const dobrados = numeros.map(x => x * 2);  // [2, 4, 6, 8, 10]
    - Multiplatform (uma linguagem, várias plataformas)
    - Safety by design (null safety, type safety)
    - Developer experience (ferramentas, sintaxe limpa)
+
+---
+
+## 📖 Glossário de Termos e Acrônimos
+
+### Acrônimos de Linguagens
+
+- **C** - Linguagem de programação (nome simples, sem acrônimo)
+- **C++** - C Plus Plus (extensão do C)
+- **OOP** - Object-Oriented Programming (Programação Orientada a Objetos)
+- **POO** - Programação Orientada a Objetos (português)
+- **JVM** - Java Virtual Machine (Máquina Virtual Java)
+- **JIT** - Just-In-Time compilation (Compilação em Tempo de Execução)
+- **GC** - Garbage Collection (Coleta de Lixo)
+- **SQL** - Structured Query Language (Linguagem de Consulta Estruturada)
+- **API** - Application Programming Interface (Interface de Programação)
+- **SDK** - Software Development Kit (Kit de Desenvolvimento)
+
+### Paradigmas de Programação
+
+**Procedural** - Foco em funções/procedimentos que operam em dados 
+**Orientado a Objetos** - Organização em objetos que encapsulam dados e comportamentos
+**Funcional** - Baseado em funções matemáticas, sem efeitos colaterais
+**Imperativo** - Descreve COMO fazer algo (passo a passo)
+**Declarativo** - Descreve O QUE fazer (resultado desejado)
+**Multiparadigma** - Suporta múltiplos estilos de programação
+
+### Tipos de Linguagens
+
+**Compilada** - Traduzida para código de máquina antes da execução
+**Interpretada** - Executada linha por linha por um interpretador
+**Script** - Geralmente interpretada, foca em automatização
+**Híbrida** - Combina compilação e interpretação (ex: Java)
+
+### Sistemas de Tipos
+
+**Tipagem Estática** - Tipos definidos em tempo de compilação
+**Tipagem Dinâmica** - Tipos determinados em tempo de execução
+**Tipagem Forte** - Não faz conversões automáticas entre tipos
+**Tipagem Fraca** - Faz conversões automáticas entre tipos
+**Type Safety** - Sistema previne erros de tipo
+**Null Safety** - Sistema previne erros de valores nulos
+
+### Gerenciamento de Memória
+
+**malloc()** - Função C para alocar memória dinamicamente
+**free()** - Função C para liberar memória alocada
+**Memory Leak** - Vazamento de memória (não liberada)
+**Dangling Pointer** - Ponteiro para memória já liberada
+**Buffer Overflow** - Escrita além do espaço alocado
+**Garbage Collection** - Limpeza automática de memória
+**Stack** - Área de memória para variáveis locais
+**Heap** - Área de memória para objetos dinâmicos
+
+### Processo de Desenvolvimento
+
+**Código Fonte** - Código original escrito pelo programador
+**Bytecode** - Código intermediário (ex: Java, Kotlin) 
+**Código de Máquina** - Instruções específicas do processador
+**Assembly** - Linguagem de baixo nível, próxima ao código de máquina
+**Compilador** - Traduz código fonte para executável
+**Interpretador** - Executa código fonte diretamente
+**REPL** - Read-Eval-Print Loop (ambiente interativo)
+
+### Conceitos Importantes
+
+**Portabilidade** - Capacidade de rodar em diferentes sistemas
+**Interoperabilidade** - Capacidade de linguagens trabalharem juntas
+**Cross-platform** - Funciona em múltiplas plataformas
+**Backward Compatibility** - Compatibilidade com versões anteriores
+**Boilerplate** - Código repetitivo necessário
+**Sintaxe** - Regras de escrita da linguagem
+**Semântica** - Significado/comportamento do código
+**Abstração** - Ocultar complexidade, focar no essencial
+**Encapsulamento** - Agrupar dados e métodos relacionados
+
+### Ferramentas e Ambiente
+
+**IDE** - Integrated Development Environment (Ambiente de Desenvolvimento)
+**Compiler** - Compilador
+**Debugger** - Ferramenta para encontrar erros
+**Profiler** - Ferramenta para analisar performance
+**Version Control** - Controle de versões (ex: Git)
+**Repository** - Repositório de código
+
+### Extensões de Arquivo Comuns
+
+**.c** - Código fonte C 
+**.cpp, .cxx** - Código fonte C++
+**.java** - Código fonte Java 
+**.kt** - Código fonte Kotlin
+**.py** - Código fonte Python
+**.js** - Código fonte JavaScript
+**.exe** - Executável Windows
+**.class** - Bytecode Java/Kotlin
+**.o** - Arquivo objeto (compilado mas não linkado)
+
+
+💡 **Não se preocupe em decorar!** Estes termos se tornarão naturais conforme você programa. Use este glossário como referência quando encontrar termos desconhecidos nas aulas.
