@@ -255,7 +255,7 @@ print(saudar("Mundo"))
 
 **C influenciou:**
 - Sintaxe de praticamente todas as linguagens modernas
-- Modelo de compilação
+- Modelo de  
 
 **C++ influenciou:**
 - Java (OOP, mas simplificou herança múltipla)
@@ -376,7 +376,7 @@ Código Java (.java) → Compilador javac → Bytecode (.class) → JVM interpre
 
 int main() {
     // Aloca memória para 10 inteiros
-    int *numeros = malloc(10 * sizeof(int));
+    int *numeros = malloc(10 * sizeof(int)); // 10 * 32 bits  [][][][][][][][][]
     
     if (numeros == NULL) {
         printf("Erro: não foi possível alocar memória\n");
@@ -384,8 +384,14 @@ int main() {
     }
     
     // Usa a memória
-    for(int i = 0; i < 10; i++) {
+    for(int i = 0; i <= 10; i++) {
+    
         numeros[i] = i * i;
+        numeros[0] = 0 * 0 
+        numeros[1] = 1 * 1
+        ...
+        numeros[9] = 9 * 9
+        // numeros[10] = 10 * 10 Buffer Overflow
     }
     
     // IMPORTANTE: libera a memória
@@ -404,7 +410,7 @@ int main() {
 
 ---
 
-#### **Gerenciamento Automático (Garbage Collection)**
+#### **Gerenciamento Automático (Garbage Collection)** JVM
 
 **Como funciona:**
 - Sistema monitora automaticamente objetos na memória

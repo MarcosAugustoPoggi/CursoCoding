@@ -169,6 +169,8 @@ Java 21 (2023) ← LTS mais recente
 ### Estrutura Simplificada
 
 ```
+STACK é uma pilha, pensa em uma pilha de pratos para lavar -
+"Last-In, First-Out" (LIFO) 
 ┌─────────────────────────────────────────┐
 │                  JVM                    │
 │                                         │
@@ -184,10 +186,10 @@ Java 21 (2023) ← LTS mais recente
 │  │(Executa)    │  │   └─────────┘   │   │
 │  └─────────────┘  └─────────────────┘   │
 │                                         │
-│  ┌─────────────────────────────────────│
-│  │     Garbage Collector              │
-│  │     (Limpa memória)                │
-│  └─────────────────────────────────────│
+│  ┌─────────────────────────────────────┐│
+│  │     Garbage Collector               ││
+│  │     (Limpa memória)                 ││
+│  └─────────────────────────────────────┘│
 └─────────────────────────────────────────┘
 ```
 
