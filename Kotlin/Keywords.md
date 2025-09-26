@@ -1,4 +1,18 @@
-# Keywords e Comentários
+# Kotlin - Keywords (Palavras-chave)
+**ou palavras reservadas**
+
+## Introdução: Aprendendo a "Linguagem" Kotlin
+
+Assim como você aprendeu português com palavras, verbos e regras gramaticais, programar em Kotlin também tem seu vocabulário especial.
+
+**A boa notícia:** O vocabulário do Kotlin é muito menor que qualquer idioma humano!
+
+- **Português:** ~300.000 palavras
+- **Kotlin:** ~80 palavras especiais (keywords)
+
+Vamos aprender essas palavras em pequenos grupos, tornando tudo mais fácil de absorver.
+
+---
 
 ## O que são Keywords (Palavras-chave)?
 
@@ -24,7 +38,7 @@ Kotlin:    if (idade >= 18) println("Maior de idade") else println("Menor")
 
 ---
 
-## Principais Keywords do Kotlin
+## Keywords Fundamentais (Aprendemos Agora)
 
 ### 📚 Grupo 1: Declarações Básicas
 
@@ -62,27 +76,6 @@ contador = contador + 1 // ✅ OK
 
 _"var" = variable (variável que pode mudar)_
 
-#### **`class`** - Classe
-
-```kotlin
-class Pessoa {
-    val nome: String = "João"
-    
-    fun apresentar() {
-        println("Eu sou $nome")
-    }
-}
-```
-
-#### **`object`** - Objeto Singleton
-
-```kotlin
-object Configuracao {
-    val versao = "1.0"
-    fun info() = "App versão $versao"
-}
-```
-
 ---
 
 ### 🔄 Grupo 2: Controle de Fluxo
@@ -112,13 +105,6 @@ when {
     nota >= 80 -> println("Muito bom!")
     nota >= 70 -> println("Bom")
     else -> println("Pode melhorar")
-}
-
-// Com valores específicos
-when (nota) {
-    100 -> println("Perfeito!")
-    in 90..99 -> println("Quase perfeito!")
-    else -> println("Continue estudando!")
 }
 ```
 
@@ -161,9 +147,6 @@ var idade: Int = 25       // Nunca pode ser nulo
 if (nome != null) {
     println("Nome: $nome")
 }
-
-// Operador safe call
-nome?.let { println("Nome: $it") }
 ```
 
 #### **`is`** - Verificação de Tipo
@@ -174,176 +157,137 @@ val valor: Any = "Texto"
 if (valor is String) {
     println("É uma string: $valor")
 }
-
-when (valor) {
-    is String -> println("Texto: $valor")
-    is Int -> println("Número: $valor")
-    else -> println("Tipo desconhecido")
-}
 ```
 
-#### **`as`** - Conversão de Tipo
+#### **`return`** - Retornar Valor
 
 ```kotlin
-val numero: Any = 42
-val numeroInt = numero as Int  // Conversão forçada
+fun somar(a: Int, b: Int): Int {
+    return a + b  // Retorna o resultado
+}
 
-// Conversão segura
-val numeroSeguro = numero as? Int  // Retorna null se não conseguir
+fun verificarIdade(idade: Int): String {
+    if (idade >= 18) {
+        return "Maior de idade"
+    }
+    return "Menor de idade"
+}
 ```
 
 ---
 
-### 🔧 Grupo 4: Modificadores
+### 🔧 Grupo 4: Controle de Loop
 
-#### **`private`** - Privado
+#### **`break`** - Sair do Loop
 
 ```kotlin
-class MinhaClasse {
-    private val segredo = "Só eu posso ver"
+for (i in 1..10) {
+    if (i == 5) {
+        break  // Para o loop quando i for 5
+    }
+    println(i)
+}
+// Imprime: 1, 2, 3, 4
+```
+
+#### **`continue`** - Pular Iteração
+
+```kotlin
+for (i in 1..5) {
+    if (i == 3) {
+        continue  // Pula quando i for 3
+    }
+    println(i)
+}
+// Imprime: 1, 2, 4, 5
+```
+
+---
+
+## Outras Keywords (Veremos Mais Tarde)
+
+**Existem muitas outras keywords no Kotlin que aprenderemos nas próximas aulas:**
+
+### 🏗️ Orientação a Objetos
+
+- **`class`** - Para criar classes
+- **`object`** - Para objetos únicos
+- **`interface`** - Para contratos
+- **`abstract`** - Para classes abstratas
+- **`open`** - Para permitir herança
+- **`override`** - Para sobrescrever métodos
+
+### 🔐 Modificadores de Visibilidade
+
+- **`private`** - Acesso privado
+- **`public`** - Acesso público (padrão)
+- **`internal`** - Acesso interno ao módulo
+- **`protected`** - Acesso protegido (herança)
+
+### ⚡ Funcionalidades Avançadas
+
+- **`data`** - Para classes de dados
+- **`sealed`** - Para classes seladas
+- **`companion`** - Para objetos companheiros
+- **`inline`** - Para funções inline
+- **`suspend`** - Para programação assíncrona
+
+### 🔧 Outras Úteis
+
+- **`as`** - Para conversão de tipos
+- **`in`** - Para verificar se está em coleção/range
+- **`out`** - Para variância
+- **`try`** - Para tratamento de erros
+- **`catch`** - Para capturar erros
+- **`finally`** - Para código que sempre executa
+
+**Não se preocupe!** Vamos aprender essas keywords conforme precisarmos. Por agora, foque nas fundamentais.
+
+---
+
+## Exemplo Prático: Sistema de Notas
+
+```kotlin
+fun main() {
+    val nomePrograma = "Sistema de Notas"
+    var totalAlunos = 0
     
-    private fun metodoSecreto() {
-        println("Método privado")
-    }
-}
-```
-
-#### **`public`** - Público (padrão)
-
-```kotlin
-class MinhaClasse {
-    public val visivel = "Todos podem ver"  // public é padrão
-    val tambemVisivel = "Também público"    // mesmo sem escrever
-}
-```
-
-#### **`internal`** - Interno ao Módulo
-
-```kotlin
-internal class ClasseInterna {
-    internal fun funcaoInterna() {
-        println("Visível apenas neste módulo")
-    }
-}
-```
-
-#### **`protected`** - Protegido (herança)
-
-```kotlin
-open class Pai {
-    protected val heranca = "Filhos podem ver"
-}
-
-class Filho : Pai() {
-    fun usar() {
-        println(heranca)  // ✅ Pode acessar
-    }
-}
-```
-
----
-
-### 🎪 Grupo 5: Orientação a Objetos
-
-#### **`open`** - Permite Herança
-
-```kotlin
-open class Animal {  // Pode ser herdada
-    open fun som() = "Som genérico"
-}
-
-class Cachorro : Animal() {
-    override fun som() = "Au au!"
-}
-```
-
-#### **`override`** - Sobrescrever
-
-```kotlin
-class Gato : Animal() {
-    override fun som() = "Miau!"  // Sobrescreve método do pai
-}
-```
-
-#### **`abstract`** - Abstrato
-
-```kotlin
-abstract class Forma {
-    abstract fun calcularArea(): Double  // Deve ser implementado
+    println("=== $nomePrograma ===")
     
-    fun info() {  // Método concreto
-        println("Sou uma forma geométrica")
-    }
-}
-
-class Retangulo(val largura: Double, val altura: Double) : Forma() {
-    override fun calcularArea() = largura * altura
-}
-```
-
-#### **`interface`** - Interface
-
-```kotlin
-interface Voador {
-    fun voar()
-    fun pousar() = println("Pousando...")  // Implementação padrão
-}
-
-class Passaro : Voador {
-    override fun voar() {
-        println("Voando com asas!")
-    }
-}
-```
-
----
-
-### 🎁 Grupo 6: Funcionalidades Especiais
-
-#### **`data`** - Classe de Dados
-
-```kotlin
-data class Pessoa(val nome: String, val idade: Int)
-
-val pessoa1 = Pessoa("Ana", 25)
-val pessoa2 = Pessoa("Ana", 25)
-
-println(pessoa1 == pessoa2)  // true (compara valores)
-println(pessoa1)             // Pessoa(nome=Ana, idade=25)
-```
-
-#### **`sealed`** - Classe Selada
-
-```kotlin
-sealed class Resultado {
-    data class Sucesso(val valor: String) : Resultado()
-    data class Erro(val mensagem: String) : Resultado()
-    object Carregando : Resultado()
-}
-
-fun processar(resultado: Resultado) = when (resultado) {
-    is Resultado.Sucesso -> println("Sucesso: ${resultado.valor}")
-    is Resultado.Erro -> println("Erro: ${resultado.mensagem}")
-    Resultado.Carregando -> println("Carregando...")
-}
-```
-
-#### **`companion`** - Objeto Companheiro
-
-```kotlin
-class MinhaClasse {
-    companion object {
-        const val CONSTANTE = "Valor fixo"
+    val notas = listOf(85, 92, 78, 96, 88)
+    
+    for (nota in notas) {
+        totalAlunos = totalAlunos + 1
         
-        fun criarInstancia() = MinhaClasse()
+        val conceito = when {
+            nota >= 90 -> "A"
+            nota >= 80 -> "B" 
+            nota >= 70 -> "C"
+            else -> "D"
+        }
+        
+        println("Aluno $totalAlunos: Nota $nota - Conceito $conceito")
+        
+        if (nota < 70) {
+            println("  ⚠️ Aluno precisa de recuperação!")
+        }
     }
+    
+    val media = calcularMedia(notas)
+    
+    println("\nResumo:")
+    println("Total de alunos: $totalAlunos")
+    println("Média da turma: ${"%.1f".format(media)}")
+    
+    val statusTurma = if (media >= 80) "Excelente" else "Boa"
+    println("Status da turma: $statusTurma")
 }
 
-// Uso sem criar instância
-val instancia = MinhaClasse.criarInstancia()
-println(MinhaClasse.CONSTANTE)
+fun calcularMedia(notas: List<Int>): Double {
+    val soma = notas.sum()
+    return soma.toDouble() / notas.size
+}
 ```
-
 
 ---
 
@@ -351,12 +295,24 @@ println(MinhaClasse.CONSTANTE)
 
 ### Keywords Aprendidas Hoje
 
-- **Declarações:** `fun`, `val`, `var`, `class`, `object`
+- **Declarações:** `fun`, `val`, `var`
 - **Controle:** `if`, `else`, `when`, `for`, `while`
-- **Tipos:** `null`, `is`, `as`
-- **Modificadores:** `private`, `public`, `internal`, `protected`
-- **OOP:** `open`, `override`, `abstract`, `interface`
-- **Especiais:** `data`, `sealed`, `companion`
+- **Tipos:** `null`, `is`
+- **Funções:** `return`
+- **Loops:** `break`, `continue`
+
+### Regras Importantes
+
+1. **Keywords são reservadas** - não podem ser nomes de variáveis
+2. **Case-sensitive** - `if` é diferente de `IF`
+3. **Significado fixo** - sempre fazem a mesma coisa
+4. **Fundamentais para programar** - são a base da linguagem
+
+### Próxima Aula
+
+- **Variáveis e tipos de dados em detalhes**
+- **String templates e interpolação**
+- **Operadores e expressões**
 
 ---
 
@@ -364,20 +320,20 @@ println(MinhaClasse.CONSTANTE)
 
 ### Keywords/Palavras-chave
 
-**Keywords** - Palavras reservadas da linguagem com significado específico **Case-sensitive** - Diferencia maiúsculas de minúsculas **Reserved words** - Palavras que não podem ser usadas como nomes
-
-### Tipos de Declaração
-
-**Function (fun)** - Bloco de código reutilizável que executa uma tarefa **Value (val)** - Declara uma constante (valor imutável) **Variable (var)** - Declara uma variável (valor mutável) **Class** - Modelo para criar objetos **Object** - Instância única de uma classe (singleton)
+**Keywords** - Palavras reservadas da linguagem com significado específico **Case-sensitive** - Diferencia maiúsculas de minúsculas **Reserved words** - Palavras que não podem ser usadas como nomes **Function (fun)** - Bloco de código reutilizável que executa uma tarefa **Value (val)** - Declara uma constante (valor imutável) **Variable (var)** - Declara uma variável (valor mutável)
 
 ### Controle de Fluxo
 
-**Conditional (if/else)** - Executa código baseado em condições **When expression** - Versão Kotlin do switch/case, mais poderosa **Loop/Laço** - Repetição de código (for, while) **Iteration** - Uma execução do loop
-
-### Orientação a Objetos
-
-**Inheritance (herança)** - Uma classe herda características de outra **Override** - Sobrescrever um método da classe pai **Abstract** - Classe ou método que deve ser implementado por subclasses **Interface** - Contrato que define métodos que uma classe deve implementar **Encapsulation** - Ocultar detalhes internos (private, public, etc.)
+**Conditional (if/else)** - Executa código baseado em condições **When expression** - Versão Kotlin do switch/case, mais poderosa **Loop/Laço** - Repetição de código (for, while) **Iteration** - Uma execução do loop **Break** - Comando para sair do loop **Continue** - Comando para pular para próxima iteração
 
 ### Tipos e Nullabilidade
 
-**Null** - Ausência de valor **Nullable** - Tipo que pode conter null (String?) **Non-null** - Tipo que nunca pode ser null (String) **Type checking** - Verificar o tipo de uma variável (is) **Type casting** - Converter entre tipos (as) **Safe call (?.)** - Operador que evita null pointer exceptions
+**Null** - Ausência de valor **Nullable** - Tipo que pode conter null (String?) **Non-null** - Tipo que nunca pode ser null (String) **Type checking** - Verificar o tipo de uma variável (is) **Return** - Comando para retornar valor de uma função
+
+### Conceitos Gerais
+
+**Syntax** - Regras de escrita da linguagem **Expression** - Código que produz um valor **Statement** - Instrução que executa uma ação **Scope** - Alcance/visibilidade de uma variável ou função
+
+### Dica de Estudos
+
+💡 **Pratique escrevendo código!** As keywords se tornam naturais com o uso. Comece com exemplos simples e vá aumentando a complexidade gradualmente.
