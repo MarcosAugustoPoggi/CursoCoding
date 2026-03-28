@@ -110,14 +110,7 @@ val resultado = list.filter { it > 0 }  // Remove números negativos
 
 ---
 
-## Boas Práticas para Keywords e Comentários
-
-### 🎯 Keywords
-
-1. **Use nomes descritivos:** `val nomeCompleto` melhor que `val n`
-2. **Seja consistente:** Sempre use o mesmo estilo
-3. **Prefira `val` sobre `var`:** Imutabilidade é mais segura
-4. **Use `when` em vez de múltiplos `if-else`**
+## Boas Práticas para e Comentários
 
 ### 💬 Comentários
 

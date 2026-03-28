@@ -23,7 +23,7 @@ ADD AX, 3    ; Adiciona 3 ao valor em AX
 ## 2. C (1972)
 **Criador:** Dennis Ritchie (Bell Labs)
 
-![[c02_08_01.gif]]
+![[c02_08_01.gif|564]]
 
 
 **Características:**
